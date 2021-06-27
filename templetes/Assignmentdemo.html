@@ -1,0 +1,101 @@
+{% load static %}
+{% static "images" as baseURL %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Online Music Store</title>
+        <link rel="stylesheet" href="{% static 'AssignmentStyle.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Overpass:wght@100&display=swap" rel="stylesheet">
+<script src="https://use.fontawesome.com/d4ab94ab9c.js"></script>
+    </head>
+    <body>
+        <div class="container">
+        <nav>
+            <div class="nav-logo">
+                <h4>Online Music Store</h4>
+            </div>
+            <div class="searchdiv">
+                <form action="">
+                    <table>
+                        <tr>
+                            <td><input type="text" placeholder="Search for Musics" class="search" required ></td>
+                            <td><i class="fa fa-search" style="color:white; padding-left:40px" ></i></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <ul class="nav-lists">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Connect</a></li>
+
+                {% if user.is_authenticated %}
+                <li style="color:wheat">Hello, {{user.first_name}}</li>
+                <li><a href="accounts/logout">logout</a></li>
+                {% else %}
+                <li><a href="accounts/login">login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+       
+        <div class="pagewrapper">
+            <p class="p1" style="font-size: 60px;color: white;">Music is what <br>feelings sound like...<p><br>
+            <p class="p2" style="color: white;">Music expresses feeling and thought, without language; it was below and before speech, and it is above <br>and beyond all words. Some people have lives; some people have music but what do you have? <b>Sign up</b><br> today for free! and find it by exploring various Bhutanese artists through our app...</p>
+            <br>
+            <div class="Loginn">
+               
+                    <a href="accounts/register" class="btn">Sign Up</a>
+                   
+               
+            </div>
+            
+        </div>
+        </div>
+        
+        <div class="container2">
+            
+            <table class="table">
+                <tr>
+
+                    
+                    <td style="text-align: center; font-family: 'Josefin Sans', sans-serif; color: white; font-size: 30px; letter-spacing: 1px;" colspan="3"><p>New Releases</p> </td>
+                </tr>
+                
+                <tr>
+                    {% for x in musics %}
+                    <td>
+                        <a href="{% static 'Mo Mee Ba.html' %}"><div class="image"><img class="img" src="{{x.img.url}}" alt="">
+                            <div class="img_overlay img_overlay--blur">
+                                <div class="img_title">{{x.title}}</div>
+                                <p class="img_dis">by {{x.artist}}</p>
+                            </div>
+                        </div>
+                    </a>
+                </td>
+                {% endfor %}
+                </tr>
+                
+               
+                 
+                
+            </table>
+            
+        </div>
+        
+        <footer>
+            <div>
+                
+            </div>
+            <p style="text-align: center; font-family: 'Poppins', sans-serif; color: white; font-size: 10px" >CopyRight &copy; <script>document.write(new date().getFullYear());</script>,Online Music Store</p> 
+        </footer>
+    </body>
+    
+</html>

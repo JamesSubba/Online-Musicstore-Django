@@ -1,0 +1,237 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    background-image: url("image5.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: cover;
+    position: relative;
+    animation: slide 15s infinite;
+}
+@keyframes slide {
+    0%{
+        background-image: url("image5.jpg");
+    }
+    33%{
+        background-image: url("image6.jpg");
+    }
+    67%{
+        background-image: url("image0.jpg");
+    }
+    
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0,0,0,.2);
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    
+}
+.nav-logo{
+    color: rgb(226,226,226);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 22px;
+    
+}
+
+.nav-lists{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+.nav-lists li{
+    list-style: none;
+    display: inline-block;
+}
+.nav-lists a{
+    color: rgb(226,226,226);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all ease 0.5s;
+    padding:15px;
+}
+.nav-lists li a:hover{
+    background-color: rgba(0,0,0,.3);
+}
+.search{
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 18px;
+    width: 80%;
+    margin: 0 10px;
+}
+input::placeholder {
+    color: rgb(226,226,226);
+    
+    font-size: 20px;
+}
+.searchdiv{
+    width: 300px;
+    overflow: hidden;
+    font-size: 20px;
+    margin: 8px 0;
+    border-bottom: 1px solid rgb(226,226,226);
+  }
+.btn{
+    display:inline-block;
+    background:rgba(0,0,0,.2);
+    color: white;
+    padding: 8px 30px;
+    margin: 30px 0; 
+    border-radius: 30px;
+    text-decoration: none;
+    animation: movedown;
+    animation-duration: 2s;
+}
+.Loginn{
+    padding-bottom: -100px;
+}
+@keyframes movedown{
+    0%{
+        transform: translatey(-20px);
+        opacity: 0;
+    }
+    100%{
+        transform: translatey(0px);
+        opacity: 1;
+    }
+}
+.pagewrapper{
+    min-height: 100%;
+    float: right;
+    padding-top: 250px;
+    padding-right: 150px;
+    
+}
+.about{
+    padding-top:300px;
+    padding-left:100px;
+    float: left;
+    width:300px;
+}
+.p1{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    animation: moveright;
+    animation-duration: 2s;
+    padding-top: 20px;
+}
+@keyframes moveright{
+    0%{
+        transform: translatex(-20px);
+        opacity: 0;
+    }
+    100%{
+        transform: translatex(0px);
+        opacity: 1;
+    }
+}
+.pagewrapper p{
+    font-size: 13px;
+
+    
+}
+.p2{
+    animation: moveleft;
+    animation-duration: 2s;
+    padding-top: 10px;
+}
+@keyframes moveleft{
+    0%{
+        transform: translatex(20px);
+        opacity: 0;
+    }
+    100%{
+        transform: translatex(0px);
+        opacity: 1;
+    }
+}
+.container2{
+    background-image: url("image8.jpg");
+    background-position: cover;
+    background-size: cover;
+    
+
+}
+.container2 img{
+    max-width: 300px;
+    max-height: 300px;
+}
+.table{
+    align-items: center;
+    padding-left: 250px;
+}
+.table td{
+    padding:10px;
+    
+}
+.image{
+    position: relative;
+    margin-left: 20px;
+    
+}
+.img_overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+.img_overlay--blur{
+    backdrop-filter: blur(5px);
+}
+.img_overlay > *{
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+.img_overlay:hover{
+    opacity: 1;
+}
+.img_overlay:hover > *{
+    transform: translateY(0px);
+}
+.img_title{
+    font-size: 2em;
+    font-weight: bold;
+}
+.img_dis{
+    font-size: 1.25em;
+    margin-top: 0.25em;
+
+}
+footer{
+    text-align: center;
+    background-color: #333;
+    color:#fff;
+    padding: 20px;
+}
+
+

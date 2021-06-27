@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Online Music Store</title>
+        <link rel="stylesheet" href="{% static 'CSS2.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Overpass:wght@100&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+        <nav>
+            <div class="nav-logo">
+                <h4>Online Music Store</h4>
+            </div>
+            <div class="searchdiv">
+                <form action="">
+                    <table>
+                        <tr>
+                            <td><input type="text" placeholder="Search for Musics" class="search" required ></td>
+                            <td><i class="fa fa-search" style="color:white; padding-left:40px" ></i></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <ul class="nav-lists">
+                <li><a href="Assignmentdemo.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Connect</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+        <div class="container3">
+            <form class="form-ground" action="register" method="POST">
+                {% csrf_token %}
+                
+                <div class="row">
+                    <h2 style="font-size: 30px;font-family: sans-serif;">Register Form</h2><br>
+                    <div class="mb-3">
+                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        <input type="text" name="FirstName" placeholder="FirstName" pattern="[A-Za-z]+" required>
+                    </div>
+                    <div class="mb-3">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="username" placeholder="UserName" pattern="[a-z]{1,15}" required>
+                    </div>
+                    <div class="mb-3">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <input type="email" name="email" placeholder="Email-Address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                    </div>
+                    <div class="mb-3">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="pword" placeholder="Password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                    </div><br>
+                    
+                    
+                </div>
+                
+                    <input type="submit" class="buttonn" value="Sign in">   
+                    
+                    <div>
+                        {% for message in messages %}}
+                        <p style="color:white">{{message}}</p>
+                        {% endfor %}
+                    </div>
+            </form>
+            
+           
+
+        </div>
+        
+
+    </div>
+    <footer>
+        <div>
+            
+        </div>
+        <p style="text-align: center; font-family: 'Poppins', sans-serif; color: white; font-size: 10px" >CopyRight &copy; <script>document.write(new date().getFullYear());</script>,Online Music Store</p> 
+    </footer>
+    </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Online Music Store</title>
+        <link rel="stylesheet" href="CSS2.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Overpass:wght@100&display=swap" rel="stylesheet">
+<script src="https://use.fontawesome.com/d4ab94ab9c.js"></script>
+    </head>
+    <body>
+        <div class="container">
+        <nav>
+            <div class="nav-logo">
+                <h4>Online Music Store</h4>
+            </div>
+            <div class="searchdiv">
+                <form action="">
+                    <table>
+                        <tr>
+                            <td><input type="text" placeholder="Search for Musics" class="search" required ></td>
+                            <td><i class="fa fa-search" style="color:white; padding-left:40px" ></i></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            
+            <ul class="nav-lists">
+                <li><a href="Assignmentdemo.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Connect</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+        <div class="container2">
+            <div class="left">
+                <table class="table1">
+                    <tr>
+                        <td><img src="baby.jpg" alt="" id="getImage"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="right">
+                <h3 class="heady" style="font-family: 'Comfortaa', cursive; font-size: 30px;"> Mo Mee Ba </h3>
+                <table class="2">
+                    <tr>
+                        <td class="info" style="font-family: 'Overpass', sans-serif;"> 
+                            Baby Floyd is the modern music band officially formed in 2018 by a group of young music enthusiasts. <br>
+                            They are 4 of them in the band who all are currently a student. Sangay Thinley, 20, is the lead vocalist. <br>
+                            Ujal Karki, 20, is the lead guitarist. Kamal Adhikari, 23, is the bassist and Ujjal Gurung, 21, is the drummer.<br>
+                            Mo Mee Ba is their third song from their first album 'love the era'.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="btndiv">
+                <a href="" class="btn">Purchase</a>
+                <input type="button" onclick="imagefun()" value="View Other Photos" class="btn">
+            </div>
+
+        </div>
+
+    </div>
+    <footer>
+        <div>
+            
+        </div>
+        <p style="text-align: center; font-family: 'Poppins', sans-serif; color: white; font-size: 10px" >CopyRight &copy; <script>document.write(new date().getFullYear());</script>,Online Music Store</p> 
+    </footer>
+    </body>
+    <script>
+        function imagefun() {
+            var Image_Id = document.getElementById('getImage');
+            if (Image_Id.src.match("baby.jpg")) {
+                Image_Id.src = "Babyfloyd.jpg";
+            }
+            else {
+                Image_Id.src = "baby.jpg";
+            }
+        }        
+    </script>
+</html>
